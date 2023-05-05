@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>意象訓練 - Toy真情打造</title>
+        <meta name="description" content="意象訓練 - Toy真情打造">
+        <meta name="author" content="pixelcave">
+        <meta name="robots" content="noindex, nofollow">
+        <meta property="og:title" content="意象訓練">
+        <meta property="og:site_name" content="意象訓練">
+        <meta property="og:description" content="意象訓練">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="">
+        <meta property="og:image" content="">
+        <link rel="shortcut icon" href="">
+        <link rel="icon" type="image/png" sizes="192x192" href="">
+        <link rel="apple-touch-icon" sizes="180x180" href="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
+        <link rel="stylesheet" id="css-main" href="assets/css/oneui.min.css">
+        <link rel="stylesheet" href="assets/js/plugins/ion-rangeslider/css/ion.rangeSlider.css">
+    </head>
+    <body>
+        <div id="page-container" class="sidebar-dark enable-page-overlay side-scroll page-header-fixed">
+
+            <!-- Main Container -->
+            <main id="main-container">
+
+                <!-- Hero -->
+                <div class="bg-body-light">
+                    <div class="content content-full">
+                        <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
+                            <h1 class="flex-sm-fill h3 my-2">
+                                意象訓練 - Toy真情打造
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Hero -->
+
+                <!-- Page Content -->
+                <div class="content">
+                    <div class="block">
+                        <div class="block-header">
+                            <h3 class="block-title">意象訓練</h3>
+                        </div>
+                        <div class="block-content block-content-full">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <p class="font-size-sm text-muted">
+                                        設定
+                                    </p>
+                                </div>
+                                <div class="col-lg-8 col-xl-6">
+                                    <div class="form-group mb-5">
+                                        <label class="mb-4">深度</label>
+                                        <input type="text" class="js-rangeslider" id="deep" name="deep" value="30" onchange="javascript:getDeepTime();">
+                                    </div>
+                                    <div class="form-group mb-5">
+                                        <label class="mb-4">公尺/秒</label>
+                                        <input type="text" class="js-rangeslider" id="speed" name="speed" value="1" data-min="0.1" data-max="2" data-step="0.1" onchange="javascript:getDeepTime();">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                        <!-- Default Table -->
+                                        <div class="block">
+                                            <div class="block-header">
+                                                <button type="button" class="btn btn-info" id="addDeep" onclick="javascript:addDeepAlert();">
+                                                    <i class="fa fa-fw fa-plus mr-1"></i> 深度提示
+                                                </button>
+                                            </div>
+                                            <div class="block-content">
+                                                <table class="table table-vcenter" id="deepTable">
+                                                    <tbody>
+                                                        <tr>
+                                                            <th class="text-center" scope="row">
+                                                                15公尺
+                                                                <input type="hidden" name="deep_alert[]" value="15">
+                                                            </th>
+                                                            <td class="text-center">
+                                                                <div class="btn-group">
+                                                                    <button type="button" class="btn btn-sm btn-light remove"><i class="fa fa-fw fa-times"></i></button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th class="text-center" scope="row">
+                                                                25公尺
+                                                                <input type="hidden" name="deep_alert[]" value="25">
+                                                            </th>
+                                                            <td class="text-center">
+                                                                <div class="btn-group">
+                                                                    <button type="button" class="btn btn-sm btn-light remove"><i class="fa fa-fw fa-times"></i></button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <!-- END Default Table -->
+                                        <!-- Default Table -->
+
+                                        <div class="col-md-6">
+                                            <div class="block">
+                                                <div class="block-header">
+                                                    <button type="button" class="btn btn-success" id="addBack" onclick="javascript:addBackAlert();">
+                                                        <i class="fa fa-fw fa-plus mr-1"></i> 回程深度提示
+                                                    </button>
+                                                </div>
+                                                <div class="block-content">
+                                                    <table class="table table-vcenter" id="backTable">
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="text-center" scope="row">
+                                                                    15公尺
+                                                                    <input type="hidden" name="back_alert[]" value="15">
+                                                                </th>
+                                                                <td class="text-center">
+                                                                    <div class="btn-group">
+                                                                        <button type="button" class="btn btn-sm btn-light remove"><i class="fa fa-fw fa-times"></i></button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="text-center" scope="row">
+                                                                    5公尺
+                                                                    <input type="hidden" name="back_alert[]" value="5">
+                                                                </th>
+                                                                <td class="text-center">
+                                                                    <div class="btn-group">
+                                                                        <button type="button" class="btn btn-sm btn-light remove"><i class="fa fa-fw fa-times"></i></button>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- END Default Table -->
+                                    </div>
+                                    <button type="button" class="btn btn-danger mr-1 mb-3" id="stop" disabled="" onclick="javascript:stop();">
+                                        <i class="fa fa-fw fa-stop mr-1"></i> Cancel
+                                    </button><br>
+                                    <button type="button" class="btn btn-success mr-1 mb-3" id="play" onclick="javascript:play();">
+                                        <i class="fa fa-fw fa-play mr-1"></i> 開始調息
+                                    </button>
+                                    <button type="button" class="btn btn-warning mr-1 mb-3" id="start" onclick="javascript:start();">
+                                        <i class="fa fa-fw fa-play mr-1"></i> 開始潛水
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END Ion Range Sliders -->
+                    <div class="block">
+                        <div class="block-header">
+                            <h3 class="block-title">Play</h3>
+                        </div>
+                        <div class="block-content block-content-full">
+                            <div class="row text-center">
+                                <div class="col-md-4 offset-md-1" id="sleepDiv">
+                                    <div class="block">
+                                        <div class="block-content">
+                                            <h1 id="sleepTime">60s</h1>
+                                            <p>調息時間</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 offset-md-1" id="deepDiv">
+                                    <div class="block">
+                                        <div class="block-content">
+                                            <h1 id="deepTime">0s</h1>
+                                            <p>潛水時間</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Page Content -->
+            </main>
+
+            <footer id="page-footer" class="bg-body-light">
+                <div class="content py-3">
+                    <div class="row font-size-sm">
+
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script src="assets/js/oneui.core.min.js"></script>
+        <script src="assets/js/plugins/ion-rangeslider/js/ion.rangeSlider.min.js"></script>
+        <script src="assets/js/plugins/jquery-countdown/jquery.countdown.min.js"></script>
+        <script>
+            var soundEffect = document.createElement('audio');
+            var deepTime = 60;
+            var sleepTime = 122;
+            var sleepCountDown = 122;
+            var deepCountDown = 0;
+            var backTime = deepTime;
+            var sleepTimeOut;
+            var deepTimeOut;
+            var alertTimes = [];
+            var breathe = 'assets/mp3/breathe.mp3';
+
+            function addDeepAlert()
+            {
+                let deep = prompt("請輸入提示深度（限數字）");
+                if (isNaN(deep)) {
+                    alert("請輸入數字");
+                }
+                var html = "";
+                html += '<tr><th class="text-center" scope="row">' + deep + '公尺<input type="hidden" name="deep_alert[]" value="' + deep + '"></th>';
+                html += '<td class="text-center"><div class="btn-group">';
+                html += '<button type="button" class="btn btn-sm btn-light remove"><i class="fa fa-fw fa-times"></i></button>';
+                html += '</div></td></tr>';
+                $("#deepTable tbody").append(html);
+                init();
+            }
+
+            function addBackAlert()
+            {
+                let deep = prompt("請輸入提示深度（限數字）");
+                if (isNaN(deep)) {
+                    alert("請輸入數字");
+                }
+                var html = "";
+                html += '<tr><th class="text-center" scope="row">' + deep + '公尺<input type="hidden" name="back_alert[]" value="' + deep + '"></th>';
+                html += '<td class="text-center"><div class="btn-group">';
+                html += '<button type="button" class="btn btn-sm btn-light remove"><i class="fa fa-fw fa-times"></i></button>';
+                html += '</div></td></tr>';
+                $("#backTable tbody").append(html);
+                init();
+            }
+
+            $( document ).ready(function() {
+                init();
+                jQuery('.js-rangeslider:not(.js-rangeslider-enabled)').each((index, element) => {
+                let el = jQuery(element);
+                    jQuery(element).addClass('js-rangeslider-enabled').ionRangeSlider({
+                        input_values_separator: ';',
+                        skin: el.data('skin') || 'round'
+                    });
+                });
+
+                jQuery('.js-countdown').countdown((new Date().getFullYear() + 2) + '/01/15', function(event) {
+                    jQuery(this).html(event.strftime('<div class="row items-push text-center">'
+                            + '<div class="col-xs-3"><div class="font-s36 font-w700 text-white">%-D</div><div class="font-s12 font-w700 text-white-op">DAYS</div></div>'
+                            + '<div class="col-xs-3"><div class="font-s36 font-w700 text-white">%H</div><div class="font-s12 font-w700 text-white-op">HOURS</div></div>'
+                            + '<div class="col-xs-3"><div class="font-s36 font-w700 text-white">%M</div><div class="font-s12 font-w700 text-white-op">MINUTES</div></div>'
+                            + '<div class="col-xs-3"><div class="font-s36 font-w700 text-white">%S</div><div class="font-s12 font-w700 text-white-op">SECONDS</div></div>'
+                            + '</div>'
+                    ));
+                });
+            });
+
+            function init()
+            {
+                getDeepTime();
+                $(".remove").click(function() {
+                    $(this).closest("tr").remove();
+                });
+            }
+
+            function play()
+            {
+                soundEffect.pause();
+                $('#play').attr('disabled', true);
+                $('#deep').attr('disabled', true);
+                $('#speed').attr('disabled', true);
+                $('#addBack').attr('disabled', true);
+                $('#addDeep').attr('disabled', true);
+                $('#start').attr('disabled', false);
+                $('#stop').attr('disabled', false);
+                $('#sleepDiv').show();
+                $('#deepDiv').hide();
+                clearInterval(sleepTimeOut);
+                clearInterval(deepTimeOut);
+                getDeepTime();
+                alertTimes = [];
+                deepCountDown = 0;
+                sleepCountDown = 122;
+                
+                
+                soundEffect.setAttribute('src', 'assets/mp3/prc.mp3');
+                soundEffect.play();
+                sleepTimeOut = setInterval(sleepCount, 1000);
+            }
+
+            function sleepCount() {
+                sleepCountDown--;
+                if (sleepCountDown <= 0) {
+                    clearInterval(sleepTimeOut);
+                    $('#start').attr('disabled', false);
+                }
+                $("#sleepTime").html(sleepCountDown + "s");
+            }
+
+            function start() 
+            {
+                soundEffect.pause();
+                $('#play').attr('disabled', false);
+                $('#deep').attr('disabled', true);
+                $('#speed').attr('disabled', true);
+                $('#addBack').attr('disabled', true);
+                $('#addDeep').attr('disabled', true);
+                $('#stop').attr('disabled', false);
+                $('#start').attr('disabled', true);
+                $('#sleepDiv').hide();
+                $('#deepDiv').show();
+                clearInterval(sleepTimeOut);
+                clearInterval(deepTimeOut);
+                getDeepTime();
+                alertTimes = [];
+                deepCountDown = 0;
+                sleepCountDown = 122;
+
+                var speed = $("#speed").val();
+                var deep = $("#deep").val();
+                $("input[name^='deep_alert']").each(function() {
+                    if ($(this).val() && $(this).val() * 1 < deep) {
+                        alertTimes.push(parseInt(Math.ceil($(this).val() * 1 / speed)));
+                    }
+                });
+
+                $("input[name^='back_alert']").each(function() {
+                    if ($(this).val() && $(this).val() * 1 < deep) {
+                        alertTimes.push(parseInt(deepTime - Math.ceil($(this).val() * 1 / speed)));
+                    }
+                });
+
+                soundEffect.pause();
+                soundEffect.setAttribute('src', 'assets/mp3/bb.mp3?t=t');
+                soundEffect.play();
+                deepTimeOut = setInterval(deepCount, 1000);
+            }
+
+            function deepCount() {
+                deepCountDown++;
+                if (deepCountDown >= deepTime) {
+                    clearInterval(deepTimeOut);
+                    soundEffect.pause();
+                    soundEffect.setAttribute('src', 'assets/mp3/breathe.mp3');
+                    soundEffect.play();
+                    stop();
+                } else if (deepCountDown == backTime) {
+                    soundEffect.pause();
+                    soundEffect.setAttribute('src', 'assets/mp3/back.mp3?t=toy');
+                    soundEffect.play();
+                } else if (jQuery.inArray(deepCountDown, alertTimes ) >= 0) {
+                    soundEffect.pause();
+                    soundEffect.setAttribute('src', 'assets/mp3/bb.mp3?t=toy');
+                    soundEffect.play();
+                }
+
+                $("#deepTime").html(deepTime - deepCountDown + "s");
+            }
+
+            function stop()
+            {
+                $('#play').attr('disabled', false);
+                $('#deep').attr('disabled', false);
+                $('#speed').attr('disabled', false);
+                $('#addBack').attr('disabled', false);
+                $('#addDeep').attr('disabled', false);
+                $('#stop').attr('disabled', true);
+                $('#start').attr('disabled', false);
+                $('#sleepDiv').show();
+                $('#deepDiv').show();
+                clearInterval(sleepTimeOut);
+                clearInterval(deepTimeOut);
+                getDeepTime();
+                alertTimes = [];
+                deepCountDown = 0;
+                sleepCountDown = 122;
+            }
+
+            function getDeepTime()
+            {
+                var deep = $("#deep").val();
+                var speed = $("#speed").val();
+                deepTime = parseInt(Math.ceil((deep * 2) / speed));
+                deepCountDown = 0;
+                backTime = parseInt(Math.ceil(deepTime / 2));
+                $("#deepTime").html(deepTime + "s");
+                $("#sleepTime").html(sleepTime + "s");
+            }
+        </script>
+    </body>
+</html>
